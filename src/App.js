@@ -1,5 +1,7 @@
 /** @format */
 import Expense from './components/Expenses/Expenses';
+import NewExpense from './components/NewExpense/NewExpense';
+
 const App = () => {
   const expenses = [
     {
@@ -22,8 +24,14 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  const addExpenseHandler = expense => {
+   console.log(`In app.js ${expense}\n and all expenses ${expenses}`)
+    
+  };
   return (
     <div>
+      <NewExpense onAddExpsnse={addExpenseHandler} />
       <Expense allExpenses={expenses} />
     </div>
   );
